@@ -1,0 +1,27 @@
+#---------------------
+# Mote:    xinitrc
+# Archivo: ~/.xinitrc
+# Fecha:   05-05-2012
+#---------------------
+
+#---------------------------- 
+# Iniciar archivo autostart.
+#----------------------------  
+~/.config/wmfs/start.sh
+
+#-----------------------------------
+# Uso de fuentes ubicadas en local.
+#-----------------------------------
+xset +fp /usr/share/fonts/local
+xset fp rehash
+
+#--------------------
+# Uso de autocutsel.
+#--------------------
+autocutsel -fork &
+autocutsel -selection PRIMARY -fork &
+
+#--------------------------------------
+# Iniciar wmfs2 con dbus y consolekit.
+#--------------------------------------
+exec ck-launch-session dbus-launch wmfs

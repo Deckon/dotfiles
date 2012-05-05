@@ -1,0 +1,39 @@
+#---------------------
+# Mote:    bashrc
+# Archivo: ~/.bashrc
+# Fecha:   05-05-2012
+#---------------------
+
+
+### If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+#---------------
+# PS1 Original.
+#---------------
+#PS1='[\u@\h \W]\$ '
+
+#-----
+# PS1
+#-----
+PS1=' \[\033[0;31m\][\[\033[0;37m\u\[\033[0;36m\]@\[\033[0;37m\h \[\033[0;32m\]\W\[\033[0;37m\]\[\033[0;31m\]]\[\033[0;37m '
+
+#-------------------.
+# Alias del Sistema.
+#--------------------
+alias ls='ls --color=auto'
+
+#---------------
+# Alias Pacman.
+#---------------
+alias pu='sudo packer-color -Syu'
+alias pi='sudo pacman-color -S'
+alias pr='sudo pacman-color -Rns'
+alias ps='pacman-color -Ss'
+alias ph='pacman-color -Qdt'
+alias pc='sudo pacman-color -Scc'
+
+#------------
+# Mis alias.
+#------------
+alias wmfsrc='nano ~/.config/wmfs/wmfsrc'

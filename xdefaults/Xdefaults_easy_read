@@ -1,0 +1,85 @@
+!-----------------------
+! Mote:    Xdefaults
+! Archivo: ~/.Xdefaults
+! Fecha:   05-05-2012
+! Tema:    Easy_read
+! Autor:   Deckon
+!-----------------------
+
+!------------
+! Scroll bar
+!------------
+urxvt*scrollBar: false
+
+!------------------
+! Lineas a guardar
+!------------------
+urxvt.saveLines: 8000
+
+!------
+! Tabs
+!------
+!urxvt.perl-ext-common:  default,tabbed
+
+!--------
+! Fuente
+!--------
+urxvt*font: xft: Dina:pixelsize=12
+
+!----------------------------------
+! Parpadeo en el cursosr del promt
+!----------------------------------
+urxvt*cursorBlink: true
+
+!---------------
+! Transparensia
+!---------------
+!urxvt*transparent: true
+!urxvt*shading: 20
+
+!---------
+! Colores
+!---------
+*background: #1F1F1F
+*foreground: #CED1C9
+
+!---------------------
+! Negro + GrisObscuro
+!---------------------
+*color0:  #000000
+*color8:  #555753
+!--------------------
+! RojoObscuro + Rojo
+!--------------------
+*color1:  #FF898C
+*color9:  #FF898C
+!----------------------
+! VerdeObscuro + Verde
+!----------------------
+*color2:  #A7E382
+*color10: #A7E382
+!----------------------------
+! AmarilloObscuro + Amarillo
+!----------------------------
+*color3:  #DFEB69
+*color11: #DFEB69
+!--------------------
+! AzulObscuro + Azul
+!--------------------
+*color4:  #74D8ED
+*color12: #74D8ED
+!---------------------------
+! MoradoObscuro + Morado
+!---------------------------
+*color5:  #B87ED1
+*color13: #B87ED1
+!-------------------
+!CyanObscuro + Cyan
+!-------------------
+*color6:  #8FABD1
+*color14: #8FABD1
+!---------------
+! Gris + Blanco
+!---------------
+*color7:  #D4DEE2
+*color15: #FEFEFE
