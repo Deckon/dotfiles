@@ -1,6 +1,7 @@
 #
 # WMFS2 configuration file
 #
+# wmfs(-g59af606) 2 beta
 
 # Possible file inclusion:
 # @include "file"
@@ -31,7 +32,7 @@
 
      tags_occupied_fg = "#FFFFFF"
      tags_occupied_bg = "#5D82B9"
-     #tags_occupied_statusline = "\R[0;0;100;1;#FFFFFF]"
+     # tags_occupied_statusline = "\R[0;0;100;1;#AABBAA]"
 
      tags_urgent_fg    = "#000000"
      tags_urgent_bg    = "#FFFFFF"
@@ -43,11 +44,11 @@
      # Frame / Client
      client_normal_fg = "#FFFFFF"
      client_normal_bg = "#000000"
-     #client_normal_statusline = "\s[3;9;#121212;x] \s[2;8;#ff0000;x](1;client_close)"
+     # client_normal_statusline = "\s[3;9;#121212;x] \s[2;8;#ff0000;x](1;client_close)"
 
      client_sel_fg = "#FFFFFF"
      client_sel_bg = "#D52E32"
-     #client_sel_statusline = "\s[3;9;#121212;x] \s[2;8;#ff0000;x](1;client_close)"
+     # client_sel_statusline = "\s[3;9;#121212;x] \s[2;8;#ff0000;x](1;client_close)"
 
      # client_free_statusline = ""
 
@@ -94,6 +95,9 @@
 # ========================[ Tags ]========================
 [tags]
 
+  # Tag wrapping navigation
+  circular = false
+
   # Use no screen option or screen = -1 to set tag on each screen
   [tag]
       screen = -1
@@ -120,6 +124,12 @@
 # ======================[ Client ]======================
 [client]
 
+  # Padding between clients (default: 0) :
+  #padding = 75
+
+  # Give focus to new created client (default = false)
+  autofocus = false
+
   theme = "default"
   key_modifier = "Super"
 
@@ -127,7 +137,7 @@
   #  enter : focus follow mouse (default)
   #  click : click to focus
   #  everything-else : disable mouse focus support
-  focus = enter
+  focus = enteru
 
   [mouse] button = "1" func = "client_focus_click"    [/mouse]
   [mouse] button = "1" func = "mouse_swap"            [/mouse]
@@ -143,7 +153,7 @@
 
   [rule]
       # use instance = "*" for a all-clients rule
-      #instance = "chromium"
+      # instance = "chromium"
 
       # role   = ""
       # name   = ""
@@ -179,10 +189,20 @@
 # ======================[ Keys ]======================
 [keys]
 
-  # Mis Keybindings
-  [key] mod = {"Super"} key = "u" func = "spawn" cmd = "urxvt" [/key]
 
-  # Environment Keys
+  # Apps Keybindings
+  [key] mod = {"Super"} key = "u" func = "spawn" cmd = "urxvt" [/key]
+  [key] mod = {"Super"} key = "t" func = "spawn" cmd = "thunar" [/key]
+  [key] mod = {"Super"} key = "z" func = "spawn" cmd = "thunderbird" [/key]
+  [key] mod = {"Super"} key = "c" func = "spawn" cmd = "chromium" [/key]
+  [key] mod = {"Super"} key = "x" func = "spawn" cmd = "xchat" [/key]
+
+  # Volume Keybindings
+  [key] key = "XF86AudioRaiseVolume" func = "spawn" cmd = "amixer -q set Master 2+ unmute" [/key]
+  [key] key = "XF86AudioLowerVolume" func = "spawn" cmd = "amixer -q set Master 2- unmute" [/key]
+  [key] key = "XF86AudioMute" func = "spawn" cmd = "amixer -q set Master toggle" [/key]
+
+  # Environment Keybindings
   [key] mod = {"Control", "Alt"} key = "q" func = "quit" [/key]
   [key] mod = {"Control", "Alt"} key = "r" func = "reload" [/key]
 
@@ -275,6 +295,9 @@
 
   # Toggle client ignore_tag
   [key] mod = {"Super", "Shift"} key = "f" func = "client_toggle_ignore_tag" [/key]
+
+  # Toggle infobar visibility
+  [key] mod = {"Super", "Shift"} key = "h" func = "infobar_toggle_hide" cmd = "default" [/key]
 
   # Launcher
   [key] mod = {"Super"} key = "p" func = "launcher" cmd = "exec" [/key]
