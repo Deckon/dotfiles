@@ -1,0 +1,25 @@
+##############################################
+# Configuraciones
+##############################################
+background no
+out_to_x no
+out_to_console yes
+update_interval 1
+total_run_times 0
+uppercase no
+short_units yes
+use_spacer none
+if_up_strictness address
+##############################################
+# Salida
+##############################################
+# Para mostrar la temperatura se requiere de lm_sensorsps
+##############################################
+TEXT
+^i[right;10;10;/home/deckon/.config/wmfs/icons/arch.png] ^s[right;\#FFFFFF; ${exec uname -r}]\
+^s[right;\#000000; ] ^i[right;8;8;/home/deckon/.config/wmfs/icons/cpu.png] ^s[right;\#000000; ] ^p[right;60;10;0;$cpu;100;\#656C77;${if_match ${cpu} < 50}\#5D82B9${else}${if_match ${cpu} < 80}\#71D52E${else}\#d52e32${endif}${endif};cpugraph]\
+^s[right;\#000000; ] ^i[right;8;8;/home/deckon/.config/wmfs/icons/temp.png] ^s[right;\#FFFFFF; ${exec sensors |grep temp2 |cut -s -d+ -f2|cut -d. -f1}°]\
+^s[right;\#000000; ] ^i[right;8;8;/home/deckon/.config/wmfs/icons/mem.png] ^s[right;\#000000; ] ^p[right;60;10;0;${memperc};100;\#656C77;\#5D82B9;ckymem]\
+^s[right;\#000000; ] ^i[right;8;8;/home/deckon/.config/wmfs/icons/vol.png] ^s[right;\#FFFFFF; ${exec amixer get Master | awk -F'[]%[]' '/%/ {if ($7 == "off") { print "Mute" } else { print $2"%" }}'}]\
+^s[right;\#000000; ] ^i[right;8;8;/home/deckon/.config/wmfs/icons/reloj.png] ^s[right;\#000000; ] ^s[right;\#FFFFFF;${time %a %d %b %Y %H:%M:%S}]
+
